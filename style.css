@@ -1442,54 +1442,94 @@ a {
     font-size: clamp(2.2rem, 11vw, 3.2rem);
   }
 
- /* Slider Mobile — увеличенные скриншоты и чистый фон */
+/* Slider Mobile — карточка с аккуратным прямоугольным баннером */
   .slider-shell {
-    grid-template-columns: 38px minmax(0, 1fr) 38px;
-    gap: 4px;
+    grid-template-columns: 36px minmax(0, 1fr) 36px;
+    gap: 6px;
   }
 
   .slider-arrow {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
   }
 
   .slider-arrow svg {
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
   }
 
-  /* Убираем болотный градиент и лишние пустоты */
+  /* Скругляем карточку гармонично под мобильный экран */
+  .project-card {
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  /* Верхний прямоугольник под фото (без отступов и рамок) */
   .project-visual {
+    width: 100%;
     min-height: auto;
-    padding: 14px 8px;
-    background: #111315; /* ровный благородный тёмный фон */
+    aspect-ratio: 16 / 10; /* Идеальные пропорции под скриншот сайта */
+    padding: 0;
+    margin: 0;
+    background: #14171a;
+    border-bottom: 1px solid var(--line); /* Тонкая линия-разделитель перед текстом */
+    overflow: hidden;
   }
 
-  /* Отключаем фоновую вращающуюся круговую линию на смартфонах */
   .project-visual::after {
     display: none;
   }
 
-  /* Раскрываем окно со скриншотом почти на всю ширину карточки */
+  .project-preview {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Убираем все стили бутафорского браузера (рамки, тени, скругления) */
   .project-browser {
-    width: 96%;
-    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+    display: block;
   }
 
+  .project-preview:hover .project-browser,
+  .project-preview:focus-visible .project-browser {
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Полностью скрываем полоску с тремя точками на телефоне */
   .browser-bar {
-    height: 22px;
-    padding: 0 8px;
+    display: none;
   }
 
-  .browser-bar i {
-    width: 5px;
-    height: 5px;
+  .browser-body {
+    width: 100%;
+    height: 100%;
+    position: relative;
   }
 
-  /* Поджимаем отступы текста, чтобы все гармонично смотрелось */
+  /* Скриншот заполняет прямоугольник, шапка сайта всегда ровно вверху */
+  .browser-shot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 0;
+  }
+
+  /* Блок с текстом под прямоугольником */
   .project-info {
     min-height: auto;
-    padding: 20px 18px 24px;
+    padding: 22px 18px 24px;
   }
 
   .project-info h3 {
@@ -1671,12 +1711,8 @@ a {
     gap: 4px;
   }
 
-  .project-browser {
-    width: 90%;
-  }
-
   .project-info {
-    padding: 20px;
+    padding: 18px 16px;
   }
 }
 
