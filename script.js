@@ -223,9 +223,14 @@
     goTo(currentIndex - 1, { user });
   }
 
-  /* =========================================
+ /* =========================================
      AUTOPLAY ENGINE
      ========================================= */
+  function isMobileDevice() {
+    // Проверяем: узкий экран смартфона или сенсорный экран
+    return window.matchMedia("(max-width: 768px)").matches || "ontouchstart" in window;
+  }
+
   function stopAutoplay() {
     if (autoTimer) {
       clearInterval(autoTimer);
@@ -241,8 +246,8 @@
   }
 
   function startAutoplay() {
-    // Respect reduced motion preference
-    if (prefersReducedMotion) return;
+    // Отключаем автопрокрутку при reduced-motion И полностью на мобилках
+    if (prefersReducedMotion || isMobileDevice()) return;
 
     stopAutoplay();
     autoTimer = window.setInterval(() => {
@@ -251,15 +256,16 @@
   }
 
   /**
-   * Stops autoplay immediately and schedules resume after RESUME_DELAY.
-   * Called on ANY user interaction per requirements.
+   * Остановка и перезапуск автоплея
    */
   function pauseAndScheduleResume() {
     stopAutoplay();
     clearResumeTimer();
 
+    // На телефонах повторно таймер не запускаем
+    if (isMobileDevice()) return;
+
     resumeTimer = window.setTimeout(() => {
-      // Only resume if slider is still in view and lightbox is closed
       if (isInView && !lightbox.open) {
         startAutoplay();
       }

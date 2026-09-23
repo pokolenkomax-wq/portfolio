@@ -508,6 +508,13 @@ a {
   align-items: center;
   gap: 18px;
 }
+/* Убираем появление желтой рамки вокруг слайдера и картинки при клике/закрытии модалки */
+.slider-shell:focus,
+.slider-shell:focus-visible,
+.project-preview:focus,
+.project-preview:focus-visible {
+  outline: none !important;
+}
 
 .slider-viewport {
   min-width: 0;
@@ -1435,38 +1442,68 @@ a {
     font-size: clamp(2.2rem, 11vw, 3.2rem);
   }
 
-  /* Slider Mobile */
+ /* Slider Mobile — увеличенные скриншоты и чистый фон */
   .slider-shell {
-    grid-template-columns: 44px minmax(0, 1fr) 44px;
-    gap: 6px;
+    grid-template-columns: 38px minmax(0, 1fr) 38px;
+    gap: 4px;
   }
 
   .slider-arrow {
-    width: 44px;
-    height: 44px;
+    width: 38px;
+    height: 38px;
   }
 
   .slider-arrow svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
 
+  /* Убираем болотный градиент и лишние пустоты */
   .project-visual {
-    min-height: 250px;
+    min-height: auto;
+    padding: 14px 8px;
+    background: #111315; /* ровный благородный тёмный фон */
   }
 
+  /* Отключаем фоновую вращающуюся круговую линию на смартфонах */
+  .project-visual::after {
+    display: none;
+  }
+
+  /* Раскрываем окно со скриншотом почти на всю ширину карточки */
   .project-browser {
-    width: 84%;
+    width: 96%;
+    border-radius: 12px;
   }
 
+  .browser-bar {
+    height: 22px;
+    padding: 0 8px;
+  }
+
+  .browser-bar i {
+    width: 5px;
+    height: 5px;
+  }
+
+  /* Поджимаем отступы текста, чтобы все гармонично смотрелось */
   .project-info {
     min-height: auto;
-    padding: 25px;
+    padding: 20px 18px 24px;
   }
 
   .project-info h3 {
-    margin-top: 26px;
-    font-size: clamp(1.5rem, 6vw, 2rem);
+    margin: 12px 0 10px;
+    font-size: clamp(1.4rem, 5.5vw, 1.85rem);
+  }
+
+  .project-description {
+    font-size: 0.86rem;
+    line-height: 1.55;
+  }
+
+  .project-tags {
+    margin-top: 18px;
   }
 
   .slider-controls {
