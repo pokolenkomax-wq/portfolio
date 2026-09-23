@@ -1225,10 +1225,10 @@ a {
   right: 20px;
   width: 44px;
   height: 44px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 50%;
-  background: rgba(10, 11, 13, 0.82);
-  color: var(--text);
+  background: rgba(12, 13, 15, 0.92); /* плотный тёмный фон, чтобы крестик было видно на любом фоне */
+  color: #ffffff;
   font-size: 1.5rem;
   line-height: 1;
   cursor: pointer;
@@ -1464,15 +1464,16 @@ a {
     overflow: hidden;
   }
 
-  /* Верхний прямоугольник под фото (без отступов и рамок) */
+  /* Верхний прямоугольник под фото */
   .project-visual {
+    position: relative;
     width: 100%;
+    aspect-ratio: 16 / 10;
     min-height: auto;
-    aspect-ratio: 16 / 10; /* Идеальные пропорции под скриншот сайта */
     padding: 0;
     margin: 0;
     background: #14171a;
-    border-bottom: 1px solid var(--line); /* Тонкая линия-разделитель перед текстом */
+    border-bottom: 1px solid var(--line);
     overflow: hidden;
   }
 
@@ -1486,9 +1487,11 @@ a {
     width: 100%;
     height: 100%;
     display: block;
+    padding: 0;
+    border: none;
+    background: transparent;
   }
 
-  /* Убираем все стили бутафорского браузера (рамки, тени, скругления) */
   .project-browser {
     width: 100%;
     height: 100%;
@@ -1506,23 +1509,34 @@ a {
     box-shadow: none;
   }
 
-  /* Полностью скрываем полоску с тремя точками на телефоне */
+  /* Скрываем бутафорскую верхнюю полосу с точками */
   .browser-bar {
-    display: none;
+    display: none !important;
   }
 
+  /* КРИТИЧНО ДЛЯ IPHONE: делаем контейнер полноценным блоком, а не строкой */
   .browser-body {
+    display: block;
     width: 100%;
     height: 100%;
     position: relative;
   }
 
-  /* Скриншот заполняет прямоугольник, шапка сайта всегда ровно вверху */
+  /* НАВСЕГДА СКРЫВАЕМ СЕРУЮ СЕТКУ-ЗАГЛУШКУ */
+  .browser-mock {
+    display: none !important;
+  }
+
+  /* Скриншот четко раскрывается на весь прямоугольник */
   .browser-shot {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: top center;
+    display: block;
+    opacity: 1 !important;
     border-radius: 0;
   }
 
@@ -1550,61 +1564,6 @@ a {
     flex-direction: column;
     gap: 11px;
   }
-
-  /* Services Mobile */
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .service-card {
-    min-height: 315px;
-    padding: 24px;
-  }
-
-  .service-card h3 {
-    margin-top: 72px;
-  }
-
-  /* Process Mobile */
-  .process-layout {
-    gap: 45px;
-  }
-
-  .process-heading h2 {
-    font-size: clamp(2.5rem, 12vw, 3.8rem);
-  }
-
-  .process-item {
-    grid-template-columns: 47px 1fr;
-    gap: 16px;
-    padding: 23px 0;
-  }
-
-  .process-node {
-    width: 47px;
-    height: 47px;
-  }
-
-  .process-list::before,
-  .process-line {
-    left: 23px;
-  }
-
-  /* Footer Mobile */
-  .footer-main {
-    padding-bottom: 65px;
-  }
-
-  .footer-main h2 {
-    font-size: clamp(2.5rem, 12vw, 3.8rem);
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 8px;
-  }
-}
-
 /* =========================================
    TELEGRAM FAB (плавающая кнопка)
    Размер зависит от экрана:
