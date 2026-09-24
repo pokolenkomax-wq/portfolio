@@ -1539,6 +1539,11 @@ a {
     border-radius: 0;
   }
 
+/* Смещаем только первый скриншот, чтобы логотип встал на место */
+  .project-slide:first-child .browser-shot {
+    object-position: left top; /* прижимает левый край с логотипом к рамке */
+  }
+
   /* Блок с текстом под прямоугольником */
   .project-info {
     min-height: auto;
