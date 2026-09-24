@@ -1527,14 +1527,13 @@ a {
     display: none !important;
   }
 
-  /* Скриншот четко раскрывается на весь прямоугольник */
   .browser-shot {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top center;
+    object-position: center top; /* строго по центру по горизонтали */
     display: block;
     opacity: 1 !important;
     border-radius: 0;
