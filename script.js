@@ -31,7 +31,7 @@
       description:
         "Атмосферный сайт спешелти-кофейни с интерактивным меню, личным кабинетом гостя, корзиной предварительного заказа и сохранением данных в localStorage.",
       tags: ["HTML", "CSS", "JavaScript"],
-      url: "https://vidnasite.github.io/portfolio/",
+      url: "https://vidnasite.github.io/cite-for-caffe/",
       image: "assets/Screenshot_6.png",
       alt: "Скриншот сайта кофейни Why knot?",
     },
