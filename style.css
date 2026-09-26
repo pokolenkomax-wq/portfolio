@@ -144,21 +144,22 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-family: "Manrope", sans-serif;
+  font-size: 1.4rem; /* увеличен размер текста Vidna (было ~1rem) */
   font-weight: 800;
   letter-spacing: -0.04em;
 }
 
 .brand-mark {
   display: grid;
-  width: 30px;
-  height: 30px;
+  width: 40px; /* значок увеличен с 30px до 40px */
+  height: 40px;
   place-items: center;
-  border-radius: 9px;
+  border-radius: 12px;
   background: var(--accent);
   color: #10120b;
-  font-size: 0.72rem;
+  font-size: 1rem; /* увеличена буква V внутри плашки */
   transition: transform 250ms var(--ease), border-radius 250ms var(--ease);
 }
 
@@ -232,10 +233,10 @@ a {
 .section-heading h2 {
   margin: 0;
   font-family: "Manrope", sans-serif;
-  font-size: clamp(2.6rem, 5.3vw, 5.2rem);
+  font-size: clamp(2.1rem, 3.8vw, 3.6rem);
   font-weight: 800;
   letter-spacing: -0.065em;
-  line-height: 0.98;
+  line-height: 1.05;
 }
 
 .section-heading h2 span {
@@ -398,8 +399,6 @@ a {
   margin-right: 8px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 0 5px rgba(217, 255, 85, 0.07);
-  animation: pulse-dot 2s ease-in-out infinite;
 }
 
 @keyframes pulse-dot {
@@ -416,7 +415,7 @@ a {
   max-width: 1120px;
   margin: 0;
   font-family: "Manrope", sans-serif;
-  font-size: clamp(3.5rem, 8.25vw, 8rem);
+  font-size: clamp(2.6rem, 5.4vw, 5.2rem);
   font-weight: 800;
   letter-spacing: -0.075em;
   line-height: 0.93;
@@ -1352,6 +1351,19 @@ a {
     min-height: 68px;
   }
 
+  /* Увеличенный логотип для мобильных */
+  .brand {
+    font-size: 1.22rem;
+    gap: 10px;
+  }
+
+  .brand-mark {
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 0.88rem;
+  }
+
   .top-nav {
     display: none; /* TODO: бургер-меню в script.js */
   }
@@ -1387,7 +1399,7 @@ a {
 
   .hero-title {
     max-width: 100%;
-    font-size: clamp(2.2rem, 11vw, 3.2rem);
+    font-size: clamp(1.85rem, 8.5vw, 2.4rem);
     line-height: 0.98;
     letter-spacing: -0.065em;
   }
@@ -1439,7 +1451,8 @@ a {
   }
 
   .section-heading h2 {
-    font-size: clamp(2.2rem, 11vw, 3.2rem);
+    font-size: clamp(1.65rem, 7.5vw, 2.1rem);
+    line-height: 1.1;
   }
 
 /* Slider Mobile — карточка с аккуратным прямоугольным баннером */
@@ -1568,26 +1581,78 @@ a {
     flex-direction: column;
     gap: 11px;
   }
+
+  /* Services Mobile */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: 315px;
+    padding: 24px;
+  }
+
+  .service-card h3 {
+    margin-top: 72px;
+  }
+
+  /* Process Mobile */
+  .process-layout {
+    gap: 45px;
+  }
+
+  .process-heading h2 {
+    font-size: clamp(2.5rem, 12vw, 3.8rem);
+  }
+
+  .process-item {
+    grid-template-columns: 47px 1fr;
+    gap: 16px;
+    padding: 23px 0;
+  }
+
+  .process-node {
+    width: 47px;
+    height: 47px;
+  }
+
+  .process-list::before,
+  .process-line {
+    left: 23px;
+  }
+
+  /* Footer Mobile */
+  .footer-main {
+    padding-bottom: 65px;
+  }
+
+  .footer-main h2 {
+    font-size: clamp(2.5rem, 12vw, 3.8rem);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+  }
+} /* <-- ЗАКРЫВАЕМ @media (max-width: 640px) */
+
 /* =========================================
    TELEGRAM FAB (плавающая кнопка)
-   Размер зависит от экрана:
-   телефон — 52, ноутбук — 60, большой экран — 64
+   Базовые размеры для всех экранов
    ========================================= */
 .tg-fab {
   position: fixed;
-  right: 20px;
-  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  right: 28px;
+  bottom: 28px;
   z-index: 900;
   display: grid;
-  width: 52px;
-  height: 52px;
+  width: 60px;
+  height: 60px;
   place-items: center;
   border-radius: 50%;
   background: var(--accent);
   color: #10120b;
-  box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.35),
-    0 10px 30px rgba(217, 255, 85, 0.2);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45); /* только аккуратная темная тень для объема */
   animation: fab-in 600ms var(--ease) 500ms backwards;
   transition:
     transform 250ms var(--ease),
@@ -1596,17 +1661,16 @@ a {
 }
 
 .tg-fab svg {
-  width: 25px;
-  height: 25px;
+  width: 28px;
+  height: 28px;
+  display: block;
 }
 
 .tg-fab:hover,
 .tg-fab:focus-visible {
   background: #e4ff76;
   transform: translateY(-4px);
-  box-shadow:
-    0 6px 16px rgba(0, 0, 0, 0.4),
-    0 16px 38px rgba(217, 255, 85, 0.28);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55);
 }
 
 .tg-fab:active {
@@ -1624,22 +1688,22 @@ a {
   }
 }
 
-/* Ноутбуки и десктопы */
-@media (min-width: 641px) {
+/* Телефоны: компактнее и безопасный отступ снизу */
+@media (max-width: 640px) {
   .tg-fab {
-    right: 28px;
-    bottom: 28px;
-    width: 60px;
-    height: 60px;
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    width: 52px;
+    height: 52px;
   }
 
   .tg-fab svg {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
   }
 }
 
-/* Большие экраны */
+/* Большие мониторы */
 @media (min-width: 1200px) {
   .tg-fab {
     width: 64px;
@@ -1652,20 +1716,12 @@ a {
   }
 }
 
-/* Телефоны: компактнее и ближе к краю */
-@media (max-width: 640px) {
-  .tg-fab {
-    right: 16px;
-    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
-  }
-}
-
 /* =========================================
    SMALL PHONES (≤ 390px)
    ========================================= */
 @media (max-width: 390px) {
   .hero-title {
-    font-size: clamp(1.9rem, 10.5vw, 2.4rem);
+    font-size: clamp(1.55rem, 7.5vw, 1.95rem);
   }
 
   .hero-top-right {
@@ -1702,6 +1758,7 @@ a {
     transition: none;
   }
 }
+
 /* =========================================
    TOAST NOTIFICATION (Всплывающее окно)
    ========================================= */
@@ -1729,4 +1786,4 @@ a {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
-}}
+}

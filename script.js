@@ -45,13 +45,13 @@
     },
     // ВСТАВЛЯЕМ 5-Й ПРОЕКТ СЮДА:
     {
-      title: "Ярик",
+      title: "Why knot?",
       description:
-        "Краткое описание проекта: что за сайт, какие технологии и задачи решены.",
+        "Атмосферный сайт спешелти-кофейни с интерактивным меню, личным кабинетом гостя, корзиной предварительного заказа и сохранением данных в localStorage.",
       tags: ["HTML", "CSS", "JavaScript"],
-      url: "https://ссылка-на-сайт.com",
-      image: "assets/project-5.png",
-      alt: "Скриншот проекта Название",
+      url: "https://pokolenkomax-wq.github.io/cite-for-caffe/",
+      image: "assets/Screenshot_6.png",
+      alt: "Скриншот сайта кофейни Why knot?",
     },
   
   ];
@@ -129,7 +129,7 @@
               </button>
             </div>
             <div class="project-info">
-              <span class="project-index">${String(index + 1).padStart(2, "0")} / 04</span>
+              <span class="project-index">${String(index + 1).padStart(2, "0")} / ${String(projects.length).padStart(2, "0")}</span>
               <h3>${project.title}</h3>
               <p class="project-description">${project.description}</p>
               <div class="project-tags" aria-label="Технологии проекта">
