@@ -25,25 +25,7 @@
       image: "assets/project-4.png",
       alt: "Скриншот проекта Rastem.by",
     },
-    {
-      title: "GLOSS LAB",
-      description:
-        "Промо-сайт студии автодетейлинга с интерактивной галереей и формой заявки.",
-      tags: ["HTML", "CSS", "JavaScript"],
-      url: "https://vidnasite.github.io/cite-for-cars/",
-      image: "assets/project-2.png",
-      alt: "Скриншот проекта GLOSS LAB ",
-    },
-    {
-      title: "ФИКСЛАБ",
-      description:
-        "Многостраничный сайт сервисного центра по ремонту смартфонов с интерактивным прайсом и онлайн-заявкой.",
-      tags: ["HTML", "CSS", "JavaScript"],
-      url: "https://vidnasite.github.io/cite-for-phones-/",
-      image: "assets/project-3.png",
-      alt: "Скриншот проекта ФИКСЛАБ",
-    },
-    // ВСТАВЛЯЕМ 5-Й ПРОЕКТ СЮДА:
+    // 3. ТЕПЕРЬ ТРЕТЬИМ ИДЕТ КОФЕЙНЯ:
     {
       title: "Why knot?",
       description:
@@ -53,7 +35,26 @@
       image: "assets/Screenshot_6.png",
       alt: "Скриншот сайта кофейни Why knot?",
     },
-  
+    // 4. ЧЕТВЁРТЫЙ — РЕМОНТ ТЕЛЕФОНОВ:
+    {
+      title: "ФИКСЛАБ",
+      description:
+        "Многостраничный сайт сервисного центра по ремонту смартфонов с интерактивным прайсом и онлайн-заявкой.",
+      tags: ["HTML", "CSS", "JavaScript"],
+      url: "https://vidnasite.github.io/cite-for-phones-/",
+      image: "assets/project-3.png",
+      alt: "Скриншот проекта ФИКСЛАБ",
+    },
+    // 5. ТЕПЕРЬ ПЯТЫМ ИДЁТ САЙТ ПРО МАШИНЫ:
+    {
+      title: "GLOSS LAB",
+      description:
+        "Промо-сайт студии автодетейлинга с интерактивной галереей и формой заявки.",
+      tags: ["HTML", "CSS", "JavaScript"],
+      url: "https://vidnasite.github.io/cite-for-cars/",
+      image: "assets/project-2.png",
+      alt: "Скриншот проекта GLOSS LAB ",
+    },
   ];
 
   /* =========================================
