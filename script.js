@@ -12,7 +12,7 @@
       description:
         "Корпоративный сайт с акцентом на визуальную подачу, понятную структуру услуг и быстрый сценарий обращения.",
       tags: ["HTML", "CSS", "JavaScript"],
-      url: "https://pokolenkomax-wq.github.io/cite-for-beauty/",
+      url: "https://vidnasite.github.io/cite-for-beauty/",
       image: "assets/project-1.png",
       alt: "Скриншот проекта Lumera",
     },
@@ -21,7 +21,7 @@
       description:
         "Современная веб-витрина магазина детских игрушек с динамическим каталогом на базе Supabase и прямой интеграцией заказов в мессенджеры.",
       tags: ["HTML", "CSS", "JavaScript", "Supabase"],
-      url: "https://pokolenkomax-wq.github.io/rastem.by/",
+      url: "https://vidnasite.github.io/rastem.by/",
       image: "assets/project-4.png",
       alt: "Скриншот проекта Rastem.by",
     },
@@ -30,7 +30,7 @@
       description:
         "Промо-сайт студии автодетейлинга с интерактивной галереей и формой заявки.",
       tags: ["HTML", "CSS", "JavaScript"],
-      url: "https://pokolenkomax-wq.github.io/cite-for-cars/",
+      url: "https://vidnasite.github.io/cite-for-cars/",
       image: "assets/project-2.png",
       alt: "Скриншот проекта GLOSS LAB ",
     },
@@ -39,7 +39,7 @@
       description:
         "Многостраничный сайт сервисного центра по ремонту смартфонов с интерактивным прайсом и онлайн-заявкой.",
       tags: ["HTML", "CSS", "JavaScript"],
-      url: "https://pokolenkomax-wq.github.io/cite-for-phones-/",
+      url: "https://vidnasite.github.io/cite-for-phones-/",
       image: "assets/project-3.png",
       alt: "Скриншот проекта ФИКСЛАБ",
     },
@@ -49,7 +49,7 @@
       description:
         "Атмосферный сайт спешелти-кофейни с интерактивным меню, личным кабинетом гостя, корзиной предварительного заказа и сохранением данных в localStorage.",
       tags: ["HTML", "CSS", "JavaScript"],
-      url: "https://pokolenkomax-wq.github.io/cite-for-caffe/",
+      url: "https://vidnasite.github.io/portfolio/",
       image: "assets/Screenshot_6.png",
       alt: "Скриншот сайта кофейни Why knot?",
     },
